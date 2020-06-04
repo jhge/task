@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>misinformation</title>
+  <style>
+    body{
+      background-color: #1F1F1F;
+    }
+    h1{
+      font-size:40px;
+      color:#F5F5EF;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+    }
+    p{
+      font-size: 20px;
+      color:#9254EA;
+      line-height: 40px;
+    }
+    li{
+      font-size:20px;
+      color:#9254EA;
+      line-height: 50px;
+    }
+    .relative-li {
+      position: relative;
+    }
+    .article{
+      padding-left: 40px;
+    }
+    .threat {
+      top: -36px;
+      left: 65%;
+    }
+    .threat-img {
+      width: 157px;
+      height: 157px;
+      transform:rotate(360deg);
+      animation: theanimation 4s;
+    }
+    @keyframes theanimation{
+      0%{
+        transform:rotate(0deg);
+      }
+      50%{
+        transform:rotate(360deg) scale(1, 1);
+      }
+      75%{
+        transform: scale(2, 2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @-moz-keyframes theanimation{
+      0%{
+        transform:rotate(0deg);
+      }
+      50%{
+        transform:rotate(360deg) scale(1, 1);
+      }
+      75%{
+        transform: scale(2, 2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes theanimation{
+      0%{
+        transform:rotate(0deg);
+      }
+      50%{
+        transform:rotate(360deg) scale(1, 1);
+      }
+      75%{
+        transform: scale(2, 2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @-o-keyframes theanimation{
+      0%{
+        transform:rotate(0deg);
+      }
+      50%{
+        transform:rotate(360deg) scale(1, 1);
+      }
+      75%{
+        transform: scale(2, 2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @keyframes scale{
+      60%{
+        transform: scale(1, 1);
+      }
+      80% {
+        transform: scale(1.2, 1.2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @-moz-keyframes scale{
+      60%{
+        transform: scale(1, 1);
+      }
+      80% {
+        transform: scale(1.2, 1.2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes scale{
+      60%{
+        transform: scale(1, 1);
+      }
+      80% {
+        transform: scale(1.2, 1.2);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    @-o-keyframes scale{
+      60%{
+        transform: scale(1, 1);
+      }
+      80% {
+        transform: scale(1.25, 1.25);
+      }
+      100%{
+        transform: scale(1, 1);
+      }
+    }
+    .threat-img2 {
+      animation: scale 4s 0s linear infinite;
+    }
+    .threat {
+      position: absolute;
+    }
+    @media screen and (max-width: 1200px) {
+      .article {
+        position: relative;
+        padding-bottom: 150px;
+      }
+      .relative-li {
+        position: initial;
+      }
+      .threat {
+        top: inherit;
+        left: inherit;
+        bottom: 0;
+        right: 20%;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      li {
+        line-height: 30px;
+        padding-bottom: 10px;
+      }
+    }
+    .goback {
+      position: absolute;
+      top: 10px;
+      right: 40px;
+      cursor: pointer;
+      line-height: 50px;
+      color: #6479B9;
+    }
+    .goback img {
+      width: 36px;
+      height: 40px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+	<div class="article">
+    <div>
+      <h1>What is misinformation ?</h1>
+      <p>In terms of the language structure of false information, false information on the Internet should refer to information that is inconsistent with the facts. Network false information can be divided into the following two categories: first, defamatory network false information. Second, terrorist network false information.</p>
+    </div>
+    <div style="padding-top: 20px;">
+      <h1>The causes of false information appears</h1>
+      <ul>
+        <li>Win click rate and cheat readers with false information</li>
+        <li>Pursue one-sided economic news without paying attention to the authenticity of news</li>
+        <li>
+          <div class="relative-li">
+            <div>Weak sense of responsibility and check-in of network self media</div>
+            <div class="threat">
+              <a href="threat.html">
+                <img class="threat-img" src="threatt.png" alt="threat" />
+              </a>
+            </div>
+          </div>
+        </li>
+        <li>Severe negative consequences stemming from the behavior</li>
+        <li>The editors' professional quality is poor,don't have ability to identify the true and false news</li>
+      </ul>
+    </div>
+    <div class="goback" onClick="handleClick()">
+      <img src="./goback.png">
+      <span>返回上级</span>
+    </div>
+	</div>
+  <script>
+    function handleClick() {
+      window.history.go(-1)
+    }
+    var time = 0
+    var timer = setInterval(function() {
+      time += 100
+      if (time > 4000) {
+        var target = document.getElementsByClassName('threat-img')[0]
+        if (target) {
+          target.className = 'threat-img2'
+        }
+        clearInterval(timer)
+        timer = null
+      }
+    }, 100)
+  </script>
+</body>
+</html>

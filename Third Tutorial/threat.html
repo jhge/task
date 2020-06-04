@@ -1,0 +1,486 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>misinformation</title>
+<style>
+	html, body{
+		height: 100%;
+		margin: 0;
+		background-color: #1B1B1B;
+	}
+	.wrapper {
+		min-height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.d1, .d2{
+		display: flex;
+		width: 70%;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		font-size: 13px;
+	}
+	.d1>img{
+		width: 60%;
+	}
+	.d2>img {
+		width: 80%;
+	}
+	.dialog-left {
+		position: absolute;
+		width: 220px;
+		top: 16%;
+		left: 39%;
+		z-index: 50;
+		visibility: hidden;
+	}
+	.hidden-wrapper1 {
+		animation: hidden-wrapper1 2s 0s linear forwards;
+
+	}
+	.showDesc {
+		animation: showDesc 3s 0s linear forwards;
+	}
+	@keyframes hidden-wrapper1 {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@-moz-keyframes hidden-wrapper1 {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@-webkit-keyframes hidden-wrapper1 {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@-o-keyframes hidden-wrapper1 {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	@keyframes showDesc {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-webkit-keyframes showDesc {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-moz-keyframes showDesc {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-o-keyframes showDesc {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	.wrapper2 {
+		display: none;
+		opacity: 0;
+	}
+	.show-wrapper2 {
+		opacity: 0;
+		animation: show-wrapper2 2s 0s linear forwards;
+	}
+	@keyframes show-wrapper2 {
+		50% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-webkit-keyframes show-wrapper2 {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-moz-keyframes show-wrapper2 {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@-o-keyframes show-wrapper2 {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	.talk-left {
+		width: 150px;
+		min-height: 36px;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 90px;
+		left: 41px;
+	}
+	.dialog-right {
+		position: absolute;
+		width: 220px;
+		top: 15%;
+		left: 52%;
+		z-index: 50;
+		visibility: hidden;
+	}
+	.dialog-right>img {
+		transform:rotateY(180deg);
+	}
+	.talk-right {
+		width: 150px;
+		min-height: 36px;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 81px;
+		left: 44px;
+	}
+	.dialog-left>img, .dialog-right>img {
+		width: 220px;
+	}
+	.d1-desc {
+		width: 30%;
+		color: #9254EA;
+		font-size: 20px;
+		padding: 0 70px 0 10px;
+		line-height: 30px;
+		opacity: 0;
+		text-align: justify;
+	}
+
+	.d2-desc {
+		width: 30%;
+		color: #5699FF;
+		font-size: 20px;
+		padding: 0 70px 0 10px;
+		line-height: 30px;
+		opacity: 0;
+		text-align: justify;
+	}
+
+	.dialog-left2 {
+		position: absolute;
+		width: 220px;
+		top: 5%;
+		left: 37%;
+		z-index: 50;
+	}
+	.dialog-right2 {
+		position: absolute;
+		width: 220px;
+		top: 8%;
+		left: 8%;
+		z-index: 50;
+	}
+	.dialog-right2>img {
+		transform:rotateY(180deg);
+	}
+	.dialog-left2>img, .dialog-right2>img {
+		width: 220px;
+	}
+	.talk-left2 {
+		width: 150px;
+		min-height: 50px;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 81px;
+		left: 36px;
+	}
+	.talk-right2 {
+		width: 150px;
+		min-height: 70px;
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 76px;
+		left: 50px;
+	}
+	.wrapper3 {
+		opacity: 0;
+		display: none;
+	}
+	.wrapper3 img {
+		width: 0;
+	}
+	.img-wrapper {
+		width: 70%;
+	}
+	.show-img {
+		animation: show-img 2s 0s linear forwards;
+	}
+	@keyframes show-img {
+		0% {
+			width: 0px;
+		}
+		100% {
+			width: 500px;
+		}
+	}
+	@-webkit-keyframes show-img {
+		0% {
+			width: 0px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+	@-moz-keyframes show-img {
+		0% {
+			width: 0px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+	@-o-keyframes show-img {
+		0% {
+			width: 0px;
+		}
+		100% {
+			width: 400px;
+		}
+	}
+	.goback {
+		position: absolute;
+		top: 10px;
+		right: 40px;
+		cursor: pointer;
+		line-height: 50px;
+		color: #6479B9;
+	}
+	.goback img {
+		width: 36px;
+		height: 40px;
+		vertical-align: middle;
+	}
+</style>
+</head>
+<body>
+<!--第一张-->
+	<div class="wrapper wrapper1">
+		<div class="d1">
+			<img src="news.png" alt="news"/>
+			<div class="dialog-left">
+				<img src="./talk-dialog.png" alt="">
+				<div id="talk-left1" class="talk-left"></div>
+			</div>
+			<div class="dialog-right">
+				<img src="./talk-dialog.png" alt="">
+				<div id="talk-right1" class="talk-right"></div>
+			</div>
+		</div>
+		<div class="d1-desc">As long as it can attract the audience's attention, it doesn't matter whether the news is true or not. it can increase its economic benefits in the short term.</div>
+	</div>
+
+<!--第二张-->
+	<div class="wrapper wrapper2">
+		<div class="d2">
+			<img src="./public.png"/>
+			<div class="dialog-right2">
+				<img src="./talk-dialog2.png" alt="">
+				<div id="talk-left2" class="talk-left2"></div>
+			</div>
+			<div class="dialog-left2">
+				<img src="./talk-dialog2.png" alt="">
+				<div id="talk-right2" class="talk-right2"></div>
+			</div>
+		</div>
+		<div class="d2-desc">With the rapid spread of network media, a piece of false information often appears on multiple network media without any modification, making the audience more likely to believe in false information.</div>
+	</div>
+
+	<!--第三张-->
+	<div class="wrapper wrapper3">
+		<div class="img-wrapper">
+			<img src="./boom.png" style="width: 80%;">
+		</div>
+		<div class="d2-desc d3-desc" style="color: #FEBA02;">Because it has a huge impact on society,the newspaper office finally closed down because of false information, and the public who bought the cherry didn't return the money. The farmers who sold the cherry also lost ten thousands RNB because of this.</div>
+	</div>
+	<div class="goback" onClick="handleClick()">
+		<img src="./goback.png">
+		<span>返回上级</span>
+	</div>
+
+<!--    第一张news图
+        1.左边的人说：Is it fake news? The price of cherry is so cheap,it is ridiculous!
+		2.右边的人说：Never mind. Attract the audience's attention, get click rate
+	    3.右边的人说：Increase economic benefits！
+		4.左边的人说：Fine,you are my boss.
+	     (对话框出来的时候，右边出现的内容) 图片正右边的总称述 As long as it can attract the audience's attention, it doesn't matter whether the news is true or not. it can increase its economic benefits in the short term.
+         (对话结束了之后，右边出现的内容)右边总称述 In order to pursue one-sided economic news, the network media often pay no attention to the authenticity of news. The managers of network media indulge in some false information and ignore the authenticity of news, which aggravates the publication and dissemination of false information. They think it doesn't matter whether the news is true or not as long as it can attract the audience's attention. Although in the short term this approach can increase its economic benefits, in the long term it will inevitably reduce the credibility of the media.
+         
+         两张图片过渡fixed
+         第二张public search图
+         1.左边的人说：They have uploaded the news, the cherry is so cheap!
+         2.右边的人说：Yeah, send it on moments,let others know about it. Buy buy!
+         右边出现：With the rapid spread of network media, a piece of false information often appears on multiple network media without any modification, making the audience more likely to believe in false information
+
+         fixed过渡到第三张图片
+         第三张boom图
+         右边出现：Because it has a huge impact on society,the newspaper office finally closed down because of false information, and the public who bought the cherry didn't return the money. The farmers who sold the cherry also lost ten thousands RNB because of this.
+-->
+
+	<script>
+    function handleClick() {
+      window.history.go(-1)
+    }
+    var arr1 = [
+      {type: 'left', words: 'Is it fake news?'},
+      {type: 'left', words: 'The price of cherry is so cheap.'},
+      {type: 'left', words: 'It is ridiculous!'},
+      {type: 'right', words: 'Never mind.'},
+      {type: 'right', words: 'Attract the audience\'s attention, get click rate'},
+      {type: 'right', words: 'Increase economic benefits！'},
+      {type: 'left', words: 'Fine,you are my boss.'},
+    ]
+    var i = 0
+    var d1 = 0
+    var showType = 'd1'
+    var timer1 = setInterval(function() {
+      if (showType === 'd1') {
+        var dialogLeft = document.getElementsByClassName('dialog-left')[0]
+        var dialogRight = document.getElementsByClassName('dialog-right')[0]
+        if (i === 0) {
+          document.getElementsByClassName('d1-desc')[0].className += ' showDesc'
+        }
+        if (i < arr1.length) {
+          if (arr1[i].type === 'left') {
+            var targetLeft = document.getElementById('talk-left1')
+            dialogLeft.style.visibility = 'visible'
+            dialogRight.style.visibility = 'hidden'
+            // for (var a = 0; a < arr1[i].words.length; a++) {
+            // 	var timer2 = setTimeout(function() {
+            // 	  console.log(a,'i', arr1[i].words.substring(0, a))
+            //    document.getElementById('talk-left1').innerText = arr1[i].words.substring(0, a)
+            // 	}, 200)
+            // 	timer2 = null
+            // }
+            targetLeft.innerText = arr1[i].words
+          } else {
+            dialogLeft.style.visibility = 'hidden'
+            dialogRight.style.visibility = 'visible'
+            var targetRight = document.getElementById('talk-right1')
+            targetRight.innerText = arr1[i].words
+          }
+          i++
+        } else {
+          dialogLeft.style.visibility = 'hidden'
+          dialogRight.style.visibility = 'hidden'
+          // document.getElementsByClassName('d1')[0].className += ' moveLeft'
+          // document.getElementsByClassName('d1-desc')[0].className += ' showDesc'
+          document.getElementsByClassName('d1-desc')[0].innerText = 'In order to pursue one-sided economic news, the network media often pay no attention to the authenticity of news. The managers of network media indulge in some false information and ignore the authenticity of news, which aggravates the publication and dissemination of false information. They think it doesn\'t matter whether the news is true or not as long as it can attract the audience\'s attention. Although in the short term this approach can increase its economic benefits, in the long term it will inevitably reduce the credibility of the media.'
+          showType = 'd2'
+        }
+			} else if (showType === 'd2') {
+        d1++
+        if (d1 === 4) {
+          document.getElementsByClassName('wrapper1')[0].className += ' hidden-wrapper1'
+        } else if (d1 === 5) {
+          document.getElementsByClassName('wrapper1')[0].style.display = 'none'
+          document.getElementsByClassName('wrapper2')[0].style.display = 'flex'
+          clearInterval(timer1)
+          timer1 = null
+				}
+			}
+    }, 2000)
+    // var timer1 = null
+    //       document.getElementsByClassName('wrapper2')[0].style.display = 'flex'
+    // document.getElementsByClassName('wrapper2')[0].className += ' show-wrapper2'
+    var arr2 = [
+      {type: 'left', words: 'They have uploaded the news.'},
+      {type: 'left', words: 'The cherry is so cheap!'},
+      {type: 'right', words: 'Yeah, send it on moments,let others know about it.'},
+      {type: 'right', words: ' Buy buy!'},
+    ]
+    var i2 = 0
+    var f = 0
+    var timer2 = setInterval(function() {
+		  if (!timer1 && document.getElementsByClassName('wrapper2')[0]) {
+		    if (i2 === 0) {
+          document.getElementsByClassName('wrapper2')[0].className += ' show-wrapper2'
+        }
+        var dialogLeft2 = document.getElementsByClassName('dialog-left2')[0]
+        var dialogRight2 = document.getElementsByClassName('dialog-right2')[0]
+        if (i2 === 0) {
+          document.getElementsByClassName('d2-desc')[0].className += ' showDesc'
+        }
+        if (i2 < arr2.length) {
+          if (arr2[i2].type === 'left') {
+            var targetLeft2 = document.getElementById('talk-left2')
+            dialogLeft2.style.visibility = 'hidden'
+            dialogRight2.style.visibility = 'visible'
+            targetLeft2.innerText = arr2[i2].words
+          } else {
+            dialogLeft2.style.visibility = 'visible'
+            dialogRight2.style.visibility = 'hidden'
+            var targetRight2 = document.getElementById('talk-right2')
+            targetRight2.innerText = arr2[i2].words
+          }
+          i2++
+        } else {
+					if (f === 0) {
+            dialogLeft2.style.visibility = 'hidden'
+            dialogRight2.style.visibility = 'hidden'
+            document.getElementsByClassName('wrapper2')[0].className += ' hidden-wrapper1'
+          } else if (f === 1) {
+            document.getElementsByClassName('wrapper2')[0].style.display = 'none'
+            document.getElementsByClassName('wrapper3')[0].style.display = 'flex'
+            document.getElementsByClassName('wrapper3')[0].className += ' show-wrapper2'
+            document.getElementsByClassName('img-wrapper')[0].className += ' show-img'
+          } else if (f === 2) {
+            document.getElementsByClassName('d3-desc')[0].className += ' showDesc'
+					} else if (f === 6) {
+						clearInterval(timer2)
+            timer2 = null
+						window.open('./solution.html', '_self')
+					}
+					f++
+				}
+			}
+		}, 2000)
+	</script>
+
+</body>
+</html>
